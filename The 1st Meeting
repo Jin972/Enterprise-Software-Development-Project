@@ -1,0 +1,23 @@
+The 1st Meeting – Discuss about the project goals, requirement and assign work.
+Link meeting video: https://drive.google.com/file/d/1ZTWq36lNQvJBJTB3zEuIsYq3xUzLfZo2/view?usp=sharing  
+
+Part 1: Determine the goals of the project.
+Design and develop a university journalism website based on information that contributed from students.
+
+Part 2: Determine customer requirement.
+Administrator: login, manage the accounts of other roles in the system, manage all functions and data of the system.
+Marketing Manager: login, manage post process, view posts that is confirmed, download post after date of publication.
+Marketing Coordinator: login, manage topic, set deadline, manage post that student created, comment interactively with student for post editing.
+Student: login, post management that meant they can create, edit and delete their post before deadline, view posts that is confirmed and posted on the school newsletter. 
+Guest: view posts that posted on the school newsletter.
+Other function:
+Student receive mail confirm for post and coordinator receive notify mail that student have posted.
+Captcha security: prevent automatic registration and login.  
+
+Part 3: Assign work.
+Do Van Tuan: draw ERD, Class Diagram, Sequence diagram.
+Luong Van Huy: draw DFD, Gant chart, Sequence diagram.
+Nguyen Minh Nhat: draw Activity diagram.
+Nguyen Minh Tuan: design UI-UX.
+Truong Hoai Kiet: draw Use Case diagram, screen flow diagram.
+ 
