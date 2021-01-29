@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ESD_Project
+namespace ESD_TopUp_Project
 {
     public class BundleConfig
     {

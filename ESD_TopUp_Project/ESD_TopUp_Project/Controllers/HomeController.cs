@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ESD_Project.Controllers
+namespace ESD_TopUp_Project.Controllers
 {
     public class HomeController : Controller
     {

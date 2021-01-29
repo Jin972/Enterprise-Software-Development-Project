@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESD_Project", "ESD_Project\ESD_Project.csproj", "{388A7242-146E-4E83-9E88-C78BD289D238}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESD_TopUp_Project", "ESD_TopUp_Project\ESD_TopUp_Project.csproj", "{65C8C788-D31F-4079-AD16-9A559EE21AB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{388A7242-146E-4E83-9E88-C78BD289D238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{388A7242-146E-4E83-9E88-C78BD289D238}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{388A7242-146E-4E83-9E88-C78BD289D238}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{388A7242-146E-4E83-9E88-C78BD289D238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C8C788-D31F-4079-AD16-9A559EE21AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C8C788-D31F-4079-AD16-9A559EE21AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C8C788-D31F-4079-AD16-9A559EE21AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C8C788-D31F-4079-AD16-9A559EE21AB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3FB559E7-B654-48C2-BEB9-66301179998E}
+		SolutionGuid = {B21FA181-2DBB-4046-81A7-718AEECC8600}
 	EndGlobalSection
 EndGlobal

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ESD_Project
+namespace ESD_TopUp_Project
 {
     public class MvcApplication : System.Web.HttpApplication
     {
