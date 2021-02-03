@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="LoginForm">
+    <form method="post">
+        <div class="contentHeader">
+
+            <h2 class"TextTitle">Login For Members</h2>
+            <hr />
+        </div>
+        <div class="Login1">
+            <div class="group-form input-form">
+                <label class="label-input">Username:</label>
+                <input type="text" class="input-form" name="username" placeholder="Enter your username/ email" required>
+            </div>
+            <div class="group-form input-form">
+                <label class="label-input">Password:</label>
+                <input type="password" class="input-form" name="password" placeholder="Enter your password" required>
+            </div>
+            <input type="checkbox" name="checkbox" value="">Remember username
+            <button type="submit" class="btn login-btn" name="button">Login</button>
+            <hr />
+        </div>
+        <div clsas="Login2">
+            <button class="login-Google"><span><i class="fab fa-google-plus-square"></i> - Login with FPT mail</span></button>
+        </div>
+    </form>
+</div>
+

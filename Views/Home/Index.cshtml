@@ -29,3 +29,109 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<p>@DateTime.Now</p>
+@if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+{
+    <strong>Wish you have a good day! </strong>
+    var toDay = DateTime.Today;
+    if (DateTime.Today.Day == 1)
+    {
+        <i>Today are the first day in the month</i>
+    }
+}
+else if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+{
+    <i>Today are the final week</i>
+    <strong>Wish you a good final week! </strong>
+}
+else
+{ <strong>Good day!</strong>}
+
+@switch (DateTime.Today.DayOfWeek)
+{
+    case DayOfWeek.Monday:
+        var toDay = DateTime.Today.Day;
+        if (toDay == 1)
+        {
+            <i>Today are the first day in the month</i>
+
+        }
+        <strong>Wish you have a good day! </strong>
+        break;
+    case DayOfWeek.Friday:
+        <i>Today are the final week</i>
+        <strong>Wish you a good final week! </strong>
+        break;
+    default:
+        <strong>Good day!</strong>
+        break;
+}
+@{var contries = new[] { "Vietname", "Japan", "China", "India", "USA" };}
+<ol>
+    @for (var i = 0; i < contries.Length; i++)
+    {
+        if (contries[i] == "Vietname" || contries[i] == "China")
+        {
+         <li>@contries[i] (bla bla...) </li>
+        }
+        else
+        { <li>@contries[i]</li>}
+    }
+</ol>
+<br>
+<p>forech command</p>
+<ol>
+    @foreach (var item in contries)
+    {
+        if (item == "Vietname" || item == "China")
+        {
+         <li>@item (bla bla...) </li>
+        }
+        else
+        {
+            <li>@item</li>
+        }
+    }
+</ol>
+<p>while command</p>
+<ol>
+    @{var a = 0; }
+    @while (a < contries.Length) {
+        var contry = contries[a++];
+        if (contry == "Vietname" || contry == "China")
+        {
+            <li>@contry (bla bla...)</li>
+        }
+        else { 
+            <li>@contry</li>
+        }
+    }
+</ol>
+<p>do-while command</p>
+<ol>
+    @try
+    {
+        do
+        {
+
+            var contry = contries[a++];
+            if (contry == "Vietname" || contry == "China")
+            {
+            <li>@contry (bla bla...)</li>
+            }
+            else
+            {
+            <li>@contry</li>
+            }
+        } while (a < contries.Length);
+    }
+    catch (Exception ex){<li>@ex.Message</li> }
+    finally
+    {
+        <li>Debug End!</li>
+    }
+</ol>
+<form method="post">
+    <button class="btn btn-block btn-primary center-block">Submit</button>
+</form>
