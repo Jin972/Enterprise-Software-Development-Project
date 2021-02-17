@@ -14,11 +14,12 @@ namespace ESD_Project.Models
         {
             GroupMember = new HashSet<GroupMember>();
         }
-
-        [StringLength(50)]
+        [Display(Name ="Role")]
+        [StringLength(50 , ErrorMessage = "The character lenght can't be more than 50.")]
         public string RoleId { get; set; }
 
-        [StringLength(100)]
+        [Display(Name ="Role Name")]
+        [StringLength(100, ErrorMessage = "The character lenght can't be more than 100.")]
         public string Name { get; set; }
 
         public string Decription { get; set; }

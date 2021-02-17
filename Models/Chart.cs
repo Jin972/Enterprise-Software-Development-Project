@@ -9,10 +9,12 @@ namespace ESD_Project.Models
     [Table("Chart")]
     public partial class Chart
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [Display(Name ="Chart Code")]
         public int ChartId { get; set; }
 
-        [StringLength(200)]
+        [Display(Name ="Chart Title")]
+        [StringLength(200, ErrorMessage = "The character lenght can't be more than 100.")]
         public string Name { get; set; }
 
         public string Description { get; set; }

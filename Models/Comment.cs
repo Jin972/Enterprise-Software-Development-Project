@@ -9,12 +9,15 @@ namespace ESD_Project.Models
     [Table("Comment")]
     public partial class Comment
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [Display(Name ="Code")]
         public int CommentId { get; set; }
 
         [Column("Comment")]
+        [Display(Name ="Comment Content")]
         public string Comment1 { get; set; }
 
+        [Display(Name ="Date Send")]
         public DateTime? DateOfComment { get; set; }
 
         public int? UserId { get; set; }

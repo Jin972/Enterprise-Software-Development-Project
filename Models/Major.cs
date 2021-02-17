@@ -18,10 +18,12 @@ namespace ESD_Project.Models
             User = new HashSet<User>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [Display(Name ="Major Code")]
         public int MajorId { get; set; }
 
-        [StringLength(100)]
+        [Display(Name ="Major Name")]
+        [StringLength(100, ErrorMessage = "The character lenght can't be more than 100.")]
         public string Name { get; set; }
 
         public string Description { get; set; }

@@ -15,14 +15,18 @@ namespace ESD_Project.Models
             Post = new HashSet<Post>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [Display(Name = "Topic Code")]
         public int TopicId { get; set; }
 
-        [StringLength(200)]
+        [Display(Name = "Topic Name")]
+        [StringLength(200, ErrorMessage = "The character lenght can't be more than 200.")]
         public string Name { get; set; }
 
         public string Description { get; set; }
 
+        [Display(Name ="Deadline")]
+        [DataType(DataType.Date)]
         public DateTime? ClosureDate { get; set; }
 
         public int? UserId { get; set; }

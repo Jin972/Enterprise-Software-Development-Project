@@ -16,10 +16,12 @@ namespace ESD_Project.Models
             Chart = new HashSet<Chart>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [Display(Name ="Post Code")]
         public int PostId { get; set; }
 
-        [StringLength(50)]
+        [Display(Name="Post Title")]
+        [StringLength(50, ErrorMessage = "The character lenght can't be more than 50.")]
         public string Name { get; set; }
 
         public string Desciption { get; set; }
@@ -30,6 +32,8 @@ namespace ESD_Project.Models
         [StringLength(500)]
         public string File { get; set; }
 
+        [Display(Name ="Date of Submission")]
+        [DataType(DataType.Date)]
         public DateTime? DateOfSubmission { get; set; }
 
         public int? UserId { get; set; }

@@ -17,10 +17,11 @@ namespace ESD_Project.Models
         }
 
         [Key]
-        [StringLength(50)]
+        [Display(Name ="Group Member")]
+        [StringLength(50, ErrorMessage = "The character lenght can't be more than 50.")]
         public string GroupId { get; set; }
 
-        [StringLength(200)]
+        [StringLength(200, ErrorMessage = "The character lenght can't be more than 200.")]
         public string Name { get; set; }
 
         public string Description { get; set; }

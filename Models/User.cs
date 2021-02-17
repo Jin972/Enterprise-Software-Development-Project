@@ -18,27 +18,35 @@ namespace ESD_Project.Models
             Post = new HashSet<Post>();
             Topic = new HashSet<Topic>();
         }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Display(Name = "User Code")]
+        [Key]
         public int UserId { get; set; }
 
-        [StringLength(100)]
+        [Required(ErrorMessage ="This field can't be blank.")]
+        [StringLength(100, ErrorMessage = "The character lenght can't be more than 100.")]
         public string Name { get; set; }
 
-        [StringLength(100)]
+        [Required]
+        [StringLength(100, ErrorMessage = "The character lenght can't be more than 100.")]
+        [EmailAddress(ErrorMessage = "Please enter the valid email.")]
         public string Email { get; set; }
 
-        [StringLength(50)]
+        [Required]
+        [StringLength(50, ErrorMessage = "The character lenght can't be more than 50.")]
         public string Username { get; set; }
 
-        [StringLength(50)]
+        [Required]
+        [StringLength(50, ErrorMessage = "The character lenght can't be more than 50.")]
         public string Password { get; set; }
 
+        [Range(0, Int32.MaxValue, ErrorMessage ="Please enter the valid phone number")]
         public int? Phone { get; set; }
 
-        [StringLength(200)]
+        [StringLength(200, ErrorMessage = "The character lenght can't be more than 200.")]
         public string Address { get; set; }
 
+        [Display(Name ="Date of Birth")]
+        [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
 
         [StringLength(50)]
