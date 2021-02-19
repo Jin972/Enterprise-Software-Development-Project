@@ -1,0 +1,11 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "AdminPage";
+}
+
+<h2>AdminPage</h2>
+<a href="@Url.Action("Logout","Login")" class="btn btn-danger">Logout</a>
+<script>
+    alert("Welcome" + Session["Username"]);
+</script>
+

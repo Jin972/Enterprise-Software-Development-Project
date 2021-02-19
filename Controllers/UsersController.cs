@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using ESD_Project.Common;
 using ESD_Project.Models;
 
 namespace ESD_Project.Controllers
@@ -53,9 +54,30 @@ namespace ESD_Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.User.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var checkEmail = db.User.FirstOrDefault(s => s.Email == user.Email);
+                var checkUsername = db.User.FirstOrDefault(s => s.Username == user.Username);
+                if (checkEmail != null)
+                {
+                    ModelState.AddModelError("", "Email already exists");
+                }
+                else if(checkUsername != null) 
+                {
+                    ModelState.AddModelError("", "Username already exists");
+                }
+                else
+                {
+                    user.Password = Encryptor.GetMD5(user.Password);
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.User.Add(user);
+                    var result = db.SaveChanges();
+                    if (result > 0)
+                    {
+                        ViewBag.Success = "Create Successfully!";
+                    }
+                    else {
+                        ModelState.AddModelError("","Create unsuccessfully! Please try again.");
+                    }
+                }
             }
 
             ViewBag.GroupId = new SelectList(db.GroupMember, "GroupId", "Name", user.GroupId);

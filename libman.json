@@ -17,6 +17,10 @@
     {
       "library": "modernizr@2.8.3",
       "destination": "Scripts/js/modernizr/"
+    },
+    {
+      "library": "font-awesome@5.15.2",
+      "destination": "Content/font-awesome/font-awesome/"
     }
   ]
 }
