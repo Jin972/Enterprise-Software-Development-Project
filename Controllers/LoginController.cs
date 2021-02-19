@@ -106,7 +106,7 @@ namespace ESD_Project.Controllers
         //Logout
         public ActionResult Logout()
         {
-            Session.Clear();//remove session
+            Session[CommonConstants.USER_SESSION] = null; 
             return RedirectToAction("Index", "Home");
         }
     }
