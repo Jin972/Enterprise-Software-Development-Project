@@ -5,10 +5,17 @@
     -moz-user-select: none;
     user-select: none;
 }
-
+@media (max-width: 767.98px) {
+    #menuTab {
+        display: block;
+    }
+}
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
+    }
+    #menuTab {
+        display: none;
     }
 }
 

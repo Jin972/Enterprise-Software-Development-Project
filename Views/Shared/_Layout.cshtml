@@ -11,56 +11,77 @@
 
 </head>
 <body>
-   <header>
-    <div class="container-fluid bg-primary">
-      <div class="container d-flex justify-content-end p-2">
-          <a class="btn btn-outline-danger bg-light text-danger py-1" href="@Url.Action("Login","Login")">Login</a>
-      </div>
+    <div class="container-fluid" style="background-color:#1e222e;">
+        <div class="container d-flex justify-content-end p-2">
+            @{var session = (ESD_Project.Common.UserLogin)Session[ESD_Project.Common.CommonConstants.USER_SESSION]; }
+            @if (session != null)
+            {
+                <span class="text-white">@session.Username</span>
+            }
+            else
+            {
+                <a class="btn btn-success text-white fs-5 py-1 px-3" href="@Url.Action("Login", "Login")">Sign In</a>
+            }
+        </div>
     </div>
     <div class="container-fluid clearfix d-flex justify-content-center">
-        <div class="logo-web " ><a  href="#"><img src="Image\Logo School.png" class="w-100"></a></div>
+        <div class="logo-web "><a href="#"><img src="Image\Logo School.png" class="w-100"></a></div>
     </div>
 
-    <nav class="navbar sticky-top navbar-expand-lg bg-primary p-0" >
-  <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-            <li class="nav-item">
-                @Html.ActionLink("Home", "Index", "Home", new {@class = "nav-link menu-item active text-white " })
-            </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link menu-item text-white  dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categoris
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-              @Html.ActionLink("About", "About", "Home", new { @class = "nav-link menu-item active text-white " })
-          </li>
-          <li class="nav-item">
-              @Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link menu-item active text-white " })
-          </li>
-          <li class="nav-item">
-            <a class="nav-link menu-item text-white " href="#">Policy</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary bg-success" type="submit" >Search</button>
-        </form>
-      </div>
-  </div>
-</nav>
-</header>
+    <div class="wrapper sticky-top shadow-lg">
+        <nav>
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <div class="content">
+                <div class="logo"><a href="@Url.Action("Index","Home")">News</a></div>
+                <ul class="links">
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><a href="@Url.Action("About","Home")">About</a></li>
+                    <li><a href="@Url.Action("Contract","Home")">Contract</a></li>
+                    <li>
+                        <a href="#" class="desktop-link">
+                            Faculty
+                            <span class="fas fa-caret-down"> </span>
+                        </a>
+                        <input type="checkbox" id="show-features">
+                        <label for="show-features">
+                            Faculty
+                            <span class="fas fa-caret-down"> </span>
+                        </label>
+
+                        <ul>
+                            <li><a href="#">IT</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Business</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="desktop-link">
+                            Category
+                            <span class="fas fa-caret-down"> </span>
+                        </a>
+                        <input type="checkbox" id="show-services">
+                        <label for="show-services">
+                            Category
+                            <span class="fas fa-caret-down"> </span>
+                        </label>
+                        <ul>
+                            <li><a href="#">Entertainment</a></li>
+                            <li><a href="#">Art</a></li>
+                            <li><a href="#">Sport</a></li>                         
+                        </ul>
+                    </li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+            <form action="#" class="search-box">
+                <input type="text" placeholder="Type Something to Search..." required>
+                <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+            </form>
+        </nav>
+    </div>
 
     <content>
         @RenderBody()
@@ -167,7 +188,7 @@
 
         <div class="container-fluid" style="background-color:rgba(0,0,0,.35)">
             <div class="container p-3 text-center" style="color:white;">
-                Copyright &copy; @DateTime.Now.Year 
+                Copyright &copy; @DateTime.Now.Year
             </div>
         </div>
     </footer>

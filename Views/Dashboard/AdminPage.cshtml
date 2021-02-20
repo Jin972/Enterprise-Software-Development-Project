@@ -1,8 +1,8 @@
-﻿@{
-    Layout = null;
+﻿
+@{
     ViewBag.Title = "AdminPage";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
 <h2>AdminPage</h2>
 <a href="@Url.Action("Logout","Login")" class="btn btn-danger">Logout</a>
 @{var session = (ESD_Project.Common.UserLogin)Session[ESD_Project.Common.CommonConstants.USER_SESSION]; }
@@ -10,7 +10,3 @@
 {
     <span class="text-white">@session.Username</span>
 }
-<script>
-    alert("Welcome" + Session["Username"]);
-</script>
-
